@@ -36,4 +36,13 @@ export class RecipeService {
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+  }
+
+  updateRecipe(id: number, newRecipe: Recipe) {
+    const foundRecipeIdx = this.recipes.findIndex((recipe) => recipe.id === id);
+    this.recipes[foundRecipeIdx] = newRecipe;
+  }
 }
