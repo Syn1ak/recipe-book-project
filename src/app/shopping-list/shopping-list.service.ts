@@ -23,9 +23,6 @@ export class ShoppingListService {
   }
 
   addIngredients(ingredients: Ingredient[]) {
-    // for (let ingredient of ingredients) {
-    //   this.addIngredient(ingredient);
-    // }
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
@@ -37,6 +34,6 @@ export class ShoppingListService {
 
   deleteIngredient(index: number) {
     this.ingredients.splice(index, 1);
-    this.ingredientsChanged.next(this.ingredients.slice()); 
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
